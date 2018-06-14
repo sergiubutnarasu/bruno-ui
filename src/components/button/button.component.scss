@@ -1,0 +1,89 @@
+brn-button {
+  > div {
+    position: relative;
+    display: inline-block;
+    padding: 0.625rem 0.9375rem;
+    line-height: 1;
+    font-weight: 400;
+    background-color: color(primary);
+    border: 1px solid color(primary);
+    color: color(light);
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+      box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+    @include border-radius(4px);
+    @include user-select-none();
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      outline: none;
+      @include shadow(inset 0 0 1.5rem rgba(0, 0, 0, 0.2));
+      &.clean {
+        @include shadow(inset 0 0 1.5rem rgba(0, 0, 0, 0.05));
+      }
+    }
+    /* */
+    @each $current-type in $type-list {
+      &.#{$current-type} {
+        background-color: color(#{$current-type});
+        border: 1px solid color(#{$current-type});
+        &:hover,
+        &:active {
+          background-color: color(#{$current-type}-hover);
+          border-color: color(#{$current-type}-hover);
+        }
+        &.outline {
+          &:hover,
+          &:active {
+            background-color: color(#{$current-type});
+            color: color(light);
+          }
+          background: transparent;
+          color: color(#{$current-type});
+          border: 1px solid color(#{$current-type});
+        }
+        &.clean {
+          &:hover,
+          &:active {
+            background-color: color(light);
+          }
+          background: transparent;
+          color: color(#{$current-type});
+          border: 1px solid transparent;
+        }
+      }
+    }
+    /* */
+    &.light {
+      color: color(dark);
+      background-color: color(light);
+      border: 1px solid color(light);
+      &:hover,
+      &:active {
+        background-color: color(light-hover);
+        border-color: color(light-hover);
+      }
+      &.outline {
+        &:hover,
+        &:active {
+          background-color: color(light);
+          color: color(dark);
+        }
+        background: transparent;
+        color: color(light);
+        border: 1px solid color(light);
+      }
+      &.clean {
+        &:hover,
+        &:active {
+          color: color(dark);
+          background-color: color(light);
+        }
+        background: transparent;
+        color: color(light);
+        border: 1px solid transparent;
+      }
+    }
+  }
+}
