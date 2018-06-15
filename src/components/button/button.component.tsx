@@ -8,7 +8,7 @@ import { StyleType, ModifierType } from "../../objects/types";
 export class ButtonComponent {
   @Prop() text: string;
   @Prop() type: keyof StyleType = "primary";
-  @Prop() modifier: keyof ModifierType;
+  @Prop() modifier: keyof ModifierType | "outline rounded";
 
   render() {
     const elementClass = this.GetElementClass();
