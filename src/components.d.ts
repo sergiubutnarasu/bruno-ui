@@ -27,7 +27,7 @@ declare global {
 }
 
 import {
-  ModifierType,
+  SizeType,
   StyleType,
 } from './objects/types';
 
@@ -35,7 +35,8 @@ declare global {
 
   namespace StencilComponents {
     interface BrnButton {
-      'modifier': keyof ModifierType | "outline rounded";
+      'modifier': string;
+      'size': keyof SizeType;
       'text': string;
       'type': keyof StyleType;
     }
@@ -60,7 +61,8 @@ declare global {
   }
   namespace JSXElements {
     export interface BrnButtonAttributes extends HTMLAttributes {
-      'modifier'?: keyof ModifierType | "outline rounded";
+      'modifier'?: string;
+      'size'?: keyof SizeType;
       'text'?: string;
       'type'?: keyof StyleType;
     }

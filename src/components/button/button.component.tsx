@@ -1,5 +1,5 @@
 import { Component, Prop } from "@stencil/core";
-import { StyleType, ModifierType } from "../../objects/types";
+import { StyleType, SizeType } from "../../objects/types";
 
 @Component({
   tag: "brn-button",
@@ -8,7 +8,8 @@ import { StyleType, ModifierType } from "../../objects/types";
 export class ButtonComponent {
   @Prop() text: string;
   @Prop() type: keyof StyleType = "primary";
-  @Prop() modifier: keyof ModifierType | "outline rounded";
+  @Prop() modifier: string;
+  @Prop() size: keyof SizeType;
 
   render() {
     const elementClass = this.GetElementClass();
@@ -20,6 +21,10 @@ export class ButtonComponent {
 
     if (this.modifier) {
       elementClass += ` ${this.modifier}`;
+    }
+
+    if (this.size) {
+      elementClass += ` ${this.size}`;
     }
 
     return elementClass;

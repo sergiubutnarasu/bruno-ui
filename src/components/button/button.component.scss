@@ -3,11 +3,13 @@ brn-button {
     position: relative;
     display: inline-block;
     padding: 0.625rem 0.9375rem;
+    font-size: 0.875rem;
     line-height: 1;
     font-weight: 400;
     background-color: color(primary);
     border: 1px solid color(primary);
     color: color(light);
+    text-align: center;
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
       box-shadow 0.15s ease-in-out;
     cursor: pointer;
@@ -25,6 +27,17 @@ brn-button {
     }
     &.rounded {
       @include border-radius(2rem);
+    }
+    &.block {
+      display: block;
+    }
+    &.small {
+      padding: 0.5rem 0.750rem;
+      font-size: 0.750rem;
+    }
+    &.large {
+      padding: 0.9375rem 1.5rem;
+      font-size: 1.5rem;
     }
     /* */
     @each $current-type in $type-list {

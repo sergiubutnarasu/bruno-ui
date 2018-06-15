@@ -1,4 +1,4 @@
-export class StyleType {
+export interface StyleType {
   primary: string;
   secondary: string;
   success: string;
