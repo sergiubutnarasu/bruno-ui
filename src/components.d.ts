@@ -30,6 +30,9 @@ import {
   SizeType,
   StyleType,
 } from './objects/types';
+import {
+  EventEmitter,
+} from '@stencil/core';
 
 declare global {
 
@@ -62,6 +65,7 @@ declare global {
   namespace JSXElements {
     export interface BrnButtonAttributes extends HTMLAttributes {
       'modifier'?: string;
+      'onClicked'?: (event: CustomEvent<MouseEvent>) => void;
       'size'?: keyof SizeType;
       'text'?: string;
       'type'?: keyof StyleType;

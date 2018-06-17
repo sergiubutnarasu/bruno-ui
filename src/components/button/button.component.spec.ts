@@ -76,4 +76,41 @@ describe("my-component", () => {
       expect(buttonDiv).toHaveClasses(["danger", "outline", "small"]);
     });
   });
+
+  describe("rendering without event clicked", () => {
+    let element: HTMLBrnButtonElement;
+    let testWindow: TestWindow;
+    beforeEach(async () => {
+      testWindow = new TestWindow();
+      element = await testWindow.load({
+        components: [ButtonComponent],
+        html: "<brn-button onClicked=''></brn-button>"
+      });
+    });
+
+    it("should work without clicked event", async () => {
+      const buttonDiv = element.getElementsByTagName("div")[0];
+      buttonDiv.click();
+      expect(element).toBeTruthy();
+    });
+  });
+
+  describe("rendering with event clicked", () => {
+    let element: HTMLBrnButtonElement;
+    let testWindow: TestWindow;
+    let test = () => {};
+    beforeEach(async () => {
+      testWindow = new TestWindow();
+      element = await testWindow.load({
+        components: [ButtonComponent],
+        html: `<brn-button onClicked='${test()}'></brn-button>`
+      });
+    });
+
+    it("should work with clicked event", async () => {
+      const buttonDiv = element.getElementsByTagName("div")[0];
+      buttonDiv.click();
+      expect(element).toBeTruthy();
+    });
+  });
 });

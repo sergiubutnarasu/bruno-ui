@@ -1,4 +1,4 @@
-import { Component, Prop } from "@stencil/core";
+import { Component, Prop, Event, EventEmitter } from "@stencil/core";
 import { StyleType, SizeType } from "../../objects/types";
 
 @Component({
@@ -6,6 +6,7 @@ import { StyleType, SizeType } from "../../objects/types";
   styleUrl: "button.component.scss"
 })
 export class ButtonComponent {
+  @Event() clicked: EventEmitter<MouseEvent>;
   @Prop() text: string;
   @Prop() type: keyof StyleType = "primary";
   @Prop() modifier: string;
@@ -13,7 +14,11 @@ export class ButtonComponent {
 
   render() {
     const elementClass = this.GetElementClass();
-    return <div class={elementClass}>{this.text}</div>;
+    return (
+      <div class={elementClass} onClick={e => this.HandleClickEvent(e)}>
+        {this.text}
+      </div>
+    );
   }
 
   private GetElementClass(): string {
@@ -28,5 +33,9 @@ export class ButtonComponent {
     }
 
     return elementClass;
+  }
+
+  private HandleClickEvent(e: MouseEvent) {
+    this.clicked.emit(e);
   }
 }
