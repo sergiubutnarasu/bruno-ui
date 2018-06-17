@@ -21,6 +21,8 @@ export class ColumnComponent {
   }
 
   private CalculateWidth() {
-    return this.total > 0 ? (this.columns * 100) / this.total : 0;
+    return this.total > 0 && this.columns > 0
+      ? (this.columns * 100) / this.total
+      : 0;
   }
 }

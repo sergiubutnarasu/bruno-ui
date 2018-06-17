@@ -1,7 +1,7 @@
 import { TestWindow } from "@stencil/core/testing";
 import { ButtonComponent } from "./button.component";
 
-describe("my-component", () => {
+describe("brn-button", () => {
   it("should build", () => {
     expect(new ButtonComponent()).toBeTruthy();
   });
