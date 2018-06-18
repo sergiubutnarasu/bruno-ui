@@ -5,4 +5,4 @@ jobs:
       - image: circleci/node:8.11.3
     steps:
       - checkout
-      - run: echo "hello world"
+      - run: echo "hello world!"
