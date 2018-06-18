@@ -2,7 +2,6 @@ brn-checkbox {
   label {
     color: color(dark);
     position: relative;
-    @include user-select-none;
     input {
       display: none;
       &:checked {
@@ -38,7 +37,8 @@ brn-checkbox {
         box-shadow 0.15s ease-in-out, opacity 0.2s ease-in-out,
         visibility 0.2s ease-in-out;
       cursor: pointer;
-      @include border-radius(4px);
+      @include border-radius(2px);
+      @include user-select-none;
       &:hover {
         background-color: color(light-hover);
       }
@@ -49,7 +49,7 @@ brn-checkbox {
         display: block;
         position: absolute;
         top: 0.16rem;
-        left: 0.34rem;
+        left: 0.33rem;
         width: 0.20rem;
         height: 0.45rem;
         border-bottom: 2px solid color(white);
