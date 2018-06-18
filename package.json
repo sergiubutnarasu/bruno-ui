@@ -14,9 +14,9 @@
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
     "start": "npm run dev",
-    "test": "jest",
-    "test.coverage": "jest --coverage",
-    "test.watch": "jest --watch"
+    "test": "jest --runInBand",
+    "test.coverage": "jest --coverage --runInBand",
+    "test.watch": "jest --runInBand --watch"
   },
   "devDependencies": {
     "@stencil/core": "^0.9.7",

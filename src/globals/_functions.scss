@@ -19,9 +19,15 @@
 }
 
 @mixin shadow($value) {
-    -moz-box-shadow: $value;
-    -webkit-box-shadow: $value;
-    box-shadow: $value;
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin rotate($value) {
+  -webkit-transform: rotate($value);
+  -ms-transform: rotate($value);
+  transform: rotate($value);
 }
 
 @function color($color-name, $color-variant: null) {

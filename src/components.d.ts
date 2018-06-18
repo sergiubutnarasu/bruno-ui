@@ -80,6 +80,7 @@ declare global {
     interface BrnCheckbox {
       'checked': boolean;
       'text': string;
+      'type': keyof StyleType;
     }
   }
 
@@ -103,7 +104,9 @@ declare global {
   namespace JSXElements {
     export interface BrnCheckboxAttributes extends HTMLAttributes {
       'checked'?: boolean;
+      'onChanged'?: (event: CustomEvent<boolean>) => void;
       'text'?: string;
+      'type'?: keyof StyleType;
     }
   }
 }

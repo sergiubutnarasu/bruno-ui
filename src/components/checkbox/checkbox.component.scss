@@ -1,32 +1,65 @@
 brn-checkbox {
-    label {
-        position: relative;
-
-        @include user-select-none;
-
-        input {
-            display: none;
-        }
-
-        .checkmark {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 1.2rem;
-            height: 1.2rem;
-            background-color: color(light);
-            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.15s ease-in-out;
-
-            @include border-radius(4px);
-
-            &:hover {
-                background-color: color(light-hover);
+  label {
+    color: color(dark);
+    position: relative;
+    @include user-select-none;
+    input {
+      display: none;
+      &:checked {
+        & ~ .checkmark {
+          @each $current-type in $type-list {
+            &.#{$current-type} {
+              background-color: color(#{$current-type});
             }
+          }
+          &.light {
+            background-color: color(light);
+            &:after {
+              border-bottom: 2px solid color(dark);
+              border-right: 2px solid color(dark);
+            }
+          }
+          &:after {
+            opacity: 1;
+            visibility: visible;
+          }
         }
-
-        .text {
-            padding-left: 1.5rem;
-        }
+      }
     }
+    .checkmark {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.1rem;
+      height: 1.1rem;
+      background-color: color(light);
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+        box-shadow 0.15s ease-in-out, opacity 0.2s ease-in-out,
+        visibility 0.2s ease-in-out;
+      cursor: pointer;
+      @include border-radius(4px);
+      &:hover {
+        background-color: color(light-hover);
+      }
+      &:after {
+        opacity: 0;
+        visibility: hidden;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0.18rem;
+        left: 0.38rem;
+        width: 0.25rem;
+        height: 0.5rem;
+        border-bottom: 2px solid color(white);
+        border-right: 2px solid color(white);
+        @include rotate(45deg);
+      }
+    }
+    .text {
+      padding-left: 1.5rem;
+      margin-right: 1rem;
+    }
+  }
 }
