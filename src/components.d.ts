@@ -77,6 +77,41 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface BrnCheckbox {
+      'checked': boolean;
+      'text': string;
+    }
+  }
+
+  interface HTMLBrnCheckboxElement extends StencilComponents.BrnCheckbox, HTMLStencilElement {}
+
+  var HTMLBrnCheckboxElement: {
+    prototype: HTMLBrnCheckboxElement;
+    new (): HTMLBrnCheckboxElement;
+  };
+  interface HTMLElementTagNameMap {
+    'brn-checkbox': HTMLBrnCheckboxElement;
+  }
+  interface ElementTagNameMap {
+    'brn-checkbox': HTMLBrnCheckboxElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'brn-checkbox': JSXElements.BrnCheckboxAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BrnCheckboxAttributes extends HTMLAttributes {
+      'checked'?: boolean;
+      'text'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface BrnColumn {
       'columns': number;
       'total': number;
