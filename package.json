@@ -1,6 +1,6 @@
 {
   "name": "bruno-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bruno - UI kit",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
