@@ -53,7 +53,7 @@ brn-button {
           &:hover,
           &:active {
             background-color: color(#{$current-type});
-            color: color(light);
+            color: color(white);
           }
           background: transparent;
           color: color(#{$current-type});
@@ -62,7 +62,7 @@ brn-button {
         &.clean {
           &:hover,
           &:active {
-            background-color: color(light);
+            background-color: color(clean);
           }
           background: transparent;
           color: color(#{$current-type});
@@ -94,7 +94,7 @@ brn-button {
         &:hover,
         &:active {
           color: color(dark);
-          background-color: color(light);
+          background-color: color(clean);
         }
         background: transparent;
         color: color(light);
