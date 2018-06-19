@@ -1,5 +1,5 @@
 {
-  "name": "bruno",
+  "name": "bruno-ui",
   "version": "0.0.1",
   "description": "Bruno - UI kit",
   "module": "dist/esm/index.js",
@@ -12,6 +12,7 @@
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "deploy": "npm run build && np",
     "serve": "stencil-dev-server",
     "start": "npm run dev",
     "test": "jest --runInBand",
@@ -24,18 +25,19 @@
     "@stencil/utils": "latest",
     "@stencil/sass": "0.0.5",
     "@types/jest": "^23.1.0",
-    "jest": "^23.1.0"
+    "jest": "^23.1.0",
+    "np": "^2.16.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/sergiubutnarasu/bruno.git"
   },
   "author": "Sergiu Butnarasu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/sergiubutnarasu/bruno"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/sergiubutnarasu/bruno",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
