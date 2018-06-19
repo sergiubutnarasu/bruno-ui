@@ -150,6 +150,46 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface BrnRadio {
+      'checked': boolean;
+      'name': string;
+      'text': string;
+      'type': keyof StyleType;
+    }
+  }
+
+  interface HTMLBrnRadioElement extends StencilComponents.BrnRadio, HTMLStencilElement {}
+
+  var HTMLBrnRadioElement: {
+    prototype: HTMLBrnRadioElement;
+    new (): HTMLBrnRadioElement;
+  };
+  interface HTMLElementTagNameMap {
+    'brn-radio': HTMLBrnRadioElement;
+  }
+  interface ElementTagNameMap {
+    'brn-radio': HTMLBrnRadioElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'brn-radio': JSXElements.BrnRadioAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BrnRadioAttributes extends HTMLAttributes {
+      'checked'?: boolean;
+      'name'?: string;
+      'onChanged'?: (event: CustomEvent<boolean>) => void;
+      'text'?: string;
+      'type'?: keyof StyleType;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface BrnRow {
 
     }
