@@ -219,6 +219,44 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface BrnToggle {
+      'checked': boolean;
+      'text': string;
+      'type': keyof StyleType;
+    }
+  }
+
+  interface HTMLBrnToggleElement extends StencilComponents.BrnToggle, HTMLStencilElement {}
+
+  var HTMLBrnToggleElement: {
+    prototype: HTMLBrnToggleElement;
+    new (): HTMLBrnToggleElement;
+  };
+  interface HTMLElementTagNameMap {
+    'brn-toggle': HTMLBrnToggleElement;
+  }
+  interface ElementTagNameMap {
+    'brn-toggle': HTMLBrnToggleElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'brn-toggle': JSXElements.BrnToggleAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BrnToggleAttributes extends HTMLAttributes {
+      'checked'?: boolean;
+      'onChanged'?: (event: CustomEvent<boolean>) => void;
+      'text'?: string;
+      'type'?: keyof StyleType;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
 
 export declare function defineCustomElements(window: any): void;
