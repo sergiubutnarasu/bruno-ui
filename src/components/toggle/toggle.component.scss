@@ -35,7 +35,7 @@ brn-toggle {
       position: absolute;
       top: 0;
       left: 0;
-      width: 2.2rem;
+      width: 1.75rem;
       height: 1rem;
       background-color: color(light);
       transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
@@ -51,10 +51,10 @@ brn-toggle {
         content: "";
         display: block;
         position: absolute;
-        top: 0.19rem;
-        left: 0.23rem;
-        width: 1rem;
-        height: 0.6rem;
+        top: .19rem;
+        left: .23rem;
+        width: .6rem;
+        height: .6rem;
         background-color: color(white);
         @include border-radius(0.6rem);
       }
