@@ -1,0 +1,29 @@
+brn-dropdown {
+  > div {
+    display: inline-block;
+    position: relative;
+    &.active {
+      .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        top: initial;
+        margin-top: 0.15rem;
+      }
+    }
+    .dropdown-menu {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      z-index: 1;
+      display: block;
+      text-align: left;
+      background-color: color(white);
+      border: 1px solid color(light-hover);
+      padding: 0.5rem 0.8rem;
+      margin-top: -0.15rem;
+      transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out,
+        margin-top 0.2s ease-in-out;
+      @include border-radius(4px);
+    }
+  }
+}

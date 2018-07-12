@@ -149,6 +149,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface BrnDropdown {
+      'active': boolean;
+    }
+  }
+
+  interface HTMLBrnDropdownElement extends StencilComponents.BrnDropdown, HTMLStencilElement {}
+
+  var HTMLBrnDropdownElement: {
+    prototype: HTMLBrnDropdownElement;
+    new (): HTMLBrnDropdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    'brn-dropdown': HTMLBrnDropdownElement;
+  }
+  interface ElementTagNameMap {
+    'brn-dropdown': HTMLBrnDropdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'brn-dropdown': JSXElements.BrnDropdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BrnDropdownAttributes extends HTMLAttributes {
+      'active'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface BrnRadio {
       'checked': boolean;
       'name': string;
