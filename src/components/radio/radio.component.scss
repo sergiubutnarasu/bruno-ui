@@ -2,6 +2,7 @@ brn-radio {
     label {
       color: color(dark);
       position: relative;
+      display: inline-block;
       input {
         display: none;
         &:checked {
