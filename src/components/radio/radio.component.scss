@@ -5,13 +5,13 @@ brn-radio {
       input {
         display: none;
         &:checked {
-          & ~ .checkmark {
+          & ~ .brn-radio__checkmark {
             @each $current-type in $type-list {
-              &.#{$current-type} {
+              &.brn-radio__checkmark--#{$current-type} {
                 background-color: color(#{$current-type});
               }
             }
-            &.light {
+            &.brn-radio__checkmark--light {
               background-color: color(light);
               &:after {
                 background-color: color(dark);
@@ -24,7 +24,7 @@ brn-radio {
           }
         }
       }
-      .checkmark {
+      .brn-radio__checkmark {
         display: block;
         position: absolute;
         top: 0;
@@ -56,7 +56,7 @@ brn-radio {
           @include rotate(45deg);
         }
       }
-      .text {
+      .brn-radio__text {
         padding-left: 1.5rem;
         margin-right: 1rem;
       }

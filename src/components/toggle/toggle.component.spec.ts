@@ -31,15 +31,15 @@ describe("brn-toggle", () => {
     it("should work with text parameter", async () => {
       element.text = "test";
       await testWindow.flush();
-      const target = element.getElementsByClassName("text")[0];
+      const target = element.getElementsByClassName("brn-toggle__text")[0];
       expect(target.innerHTML).toBe("test");
     });
 
     it("should work with type parameter", async () => {
       element.type = "primary";
       await testWindow.flush();
-      const target = element.getElementsByClassName("checkmark")[0];
-      expect(target.classList).toContain("primary");
+      const target = element.getElementsByClassName("brn-toggle__checkmark")[0];
+      expect(target.classList).toContain("brn-toggle__checkmark--primary");
     });
   });
 

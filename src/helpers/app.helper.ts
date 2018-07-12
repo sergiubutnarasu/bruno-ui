@@ -8,6 +8,6 @@ export class AppHelper {
   }
 
   public static GetIdWithPrefix(prefix: string) {
-    return `${prefix}-${AppHelper.GetId()}`;
+    return `${prefix}--${AppHelper.GetId()}`;
   }
 }

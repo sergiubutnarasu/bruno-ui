@@ -26,52 +26,8 @@ declare global {
 }
 
 import {
-  SizeType,
   StyleType,
 } from './objects/types';
-import {
-  EventEmitter,
-} from '@stencil/core';
-
-declare global {
-
-  namespace StencilComponents {
-    interface BrnButton {
-      'modifier': string;
-      'size': keyof SizeType;
-      'text': string;
-      'type': keyof StyleType;
-    }
-  }
-
-  interface HTMLBrnButtonElement extends StencilComponents.BrnButton, HTMLStencilElement {}
-
-  var HTMLBrnButtonElement: {
-    prototype: HTMLBrnButtonElement;
-    new (): HTMLBrnButtonElement;
-  };
-  interface HTMLElementTagNameMap {
-    'brn-button': HTMLBrnButtonElement;
-  }
-  interface ElementTagNameMap {
-    'brn-button': HTMLBrnButtonElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'brn-button': JSXElements.BrnButtonAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface BrnButtonAttributes extends HTMLAttributes {
-      'modifier'?: string;
-      'onClicked'?: (event: CustomEvent<MouseEvent>) => void;
-      'size'?: keyof SizeType;
-      'text'?: string;
-      'type'?: keyof StyleType;
-    }
-  }
-}
-
 
 declare global {
 

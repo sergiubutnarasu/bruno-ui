@@ -3,14 +3,14 @@ brn-dropdown {
     display: inline-block;
     position: relative;
     &.active {
-      .dropdown-menu {
+      .dropdown__menu {
         visibility: visible;
         opacity: 1;
         top: initial;
         margin-top: 0.15rem;
       }
     }
-    .dropdown-menu {
+    .dropdown__menu {
       visibility: hidden;
       opacity: 0;
       position: absolute;

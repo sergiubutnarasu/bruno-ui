@@ -31,15 +31,15 @@ describe("brn-radio", () => {
     it("should work with text parameter", async () => {
       element.text = "test";
       await testWindow.flush();
-      const target = element.getElementsByClassName("text")[0];
+      const target = element.getElementsByClassName("brn-radio__text")[0];
       expect(target.innerHTML).toBe("test");
     });
 
     it("should work with type parameter", async () => {
       element.type = "primary";
       await testWindow.flush();
-      const target = element.getElementsByClassName("checkmark")[0];
-      expect(target.classList).toContain("primary");
+      const target = element.getElementsByClassName("brn-radio__checkmark")[0];
+      expect(target.classList).toContain("brn-radio__checkmark--primary");
     });
 
     it("should work with test parameter", async () => {

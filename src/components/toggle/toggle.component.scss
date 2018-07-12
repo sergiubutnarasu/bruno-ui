@@ -5,21 +5,21 @@ brn-toggle {
     input {
       display: none;
       &:checked {
-        & ~ .checkmark {
+        & ~ .brn-toggle__checkmark {
           @each $current-type in $type-list {
-            &.#{$current-type} {
+            &.brn-toggle__checkmark--#{$current-type} {
               &:after {
                 background-color: color(#{$current-type});
               }
             }
           }
-          &.dark {
+          &.brn-toggle__checkmark--dark {
             background-color: color(dark);
             &:after {
               background-color: color(primary);
             }
           }
-          &.light {
+          &.brn-toggle__checkmark--light {
             &:after {
               background-color: color(dark);
             }
@@ -30,7 +30,7 @@ brn-toggle {
         }
       }
     }
-    .checkmark {
+    .brn-toggle__checkmark {
       display: block;
       position: absolute;
       top: 0;
@@ -58,14 +58,14 @@ brn-toggle {
         background-color: color(white);
         @include border-radius(0.6rem);
       }
-      &.dark {
+      &.brn-toggle__checkmark--dark {
         background-color: color(dark);
         &:hover {
           background-color: color(dark-hover);
         }
       }
     }
-    .text {
+    .brn-toggle__text {
       padding-left: 2.25rem;
       margin-right: 1rem;
     }

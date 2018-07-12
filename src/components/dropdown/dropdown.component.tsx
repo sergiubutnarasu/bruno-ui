@@ -25,7 +25,7 @@ export class DropdownComponent implements ComponentDidLoad {
   }
 
   private _id: string = AppHelper.GetIdWithPrefix("dropdown");
-  private _menuId: string = AppHelper.GetIdWithPrefix("dropdown-menu");
+  private _menuId: string = AppHelper.GetIdWithPrefix("dropdown__menu");
 
   componentDidLoad() {
     this._active = this.active;
@@ -40,14 +40,14 @@ export class DropdownComponent implements ComponentDidLoad {
     return (
       <div class={{ active: this._active }} id={`${this._id}`}>
         <div
-          class="dropdown-button"
+          class="dropdown__button"
           onClick={() => {
             this.Toggle();
           }}
         >
           <slot name="button" />
         </div>
-        <div class="dropdown-menu" id={`${this._menuId}`}>
+        <div class="dropdown__menu" id={`${this._menuId}`}>
           <slot name="menu" />
         </div>
       </div>

@@ -19,8 +19,8 @@ export class CheckboxComponent {
           checked={this.checked}
           onChange={e => this.OnChangeHandler(e)}
         />
-        <span class={`checkmark ${this.type}`} />
-        <span class="text">{this.text}</span>
+        <span class={`brn-checkbox__checkmark brn-checkbox__checkmark--${this.type}`} />
+        <span class="brn-checkbox__text">{this.text}</span>
       </label>
     );
   }

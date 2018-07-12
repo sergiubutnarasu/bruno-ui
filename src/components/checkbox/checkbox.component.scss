@@ -5,13 +5,13 @@ brn-checkbox {
     input {
       display: none;
       &:checked {
-        & ~ .checkmark {
+        & ~ .brn-checkbox__checkmark {
           @each $current-type in $type-list {
-            &.#{$current-type} {
+            &.brn-checkbox__checkmark--#{$current-type} {
               background-color: color(#{$current-type});
             }
           }
-          &.light {
+          &.brn-checkbox__checkmark--light {
             background-color: color(light);
             &:after {
               border-bottom: 2px solid color(dark);
@@ -25,7 +25,7 @@ brn-checkbox {
         }
       }
     }
-    .checkmark {
+    .brn-checkbox__checkmark {
       display: block;
       position: absolute;
       top: 0;
@@ -57,7 +57,7 @@ brn-checkbox {
         @include rotate(45deg);
       }
     }
-    .text {
+    .brn-checkbox__text {
       padding-left: 1.5rem;
       margin-right: 1rem;
     }
