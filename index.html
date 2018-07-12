@@ -199,5 +199,40 @@
 
   <hr />
 
+  <brn-row>
+    <brn-column columns="3" total="12"></brn-column>
+    <brn-column columns="6" total="12">
+      <div class="text-center">
+        <brn-dropdown>
+          <brn-button slot="button" type="primary" text="Text only"></brn-button>
+          <div slot="menu">
+            test
+          </div>
+        </brn-dropdown>
+
+        <brn-dropdown>
+          <brn-button slot="button" type="secondary" text="Menu options"></brn-button>
+          <div slot="menu">
+            <ul>
+              <li>
+                <a href="#">Some text</a>
+              </li>
+              <li>
+                <a href="#">Another text</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">Separated option</a>
+              </li>
+            </ul>
+          </div>
+        </brn-dropdown>
+      </div>
+    </brn-column>
+    <brn-column columns="3" total="12"></brn-column>
+  </brn-row>
+
+  <hr />
+
 </body>
 </html>
