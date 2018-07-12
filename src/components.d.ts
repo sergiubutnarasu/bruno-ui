@@ -151,6 +151,7 @@ declare global {
   namespace StencilComponents {
     interface BrnDropdown {
       'active': boolean;
+      'closeable': boolean;
     }
   }
 
@@ -174,6 +175,7 @@ declare global {
   namespace JSXElements {
     export interface BrnDropdownAttributes extends HTMLAttributes {
       'active'?: boolean;
+      'closeable'?: boolean;
     }
   }
 }

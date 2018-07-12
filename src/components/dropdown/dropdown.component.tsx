@@ -15,6 +15,7 @@ import { AppHelper } from "../../helpers/app.helper";
 })
 export class DropdownComponent implements ComponentDidLoad {
   @Element() _element: HTMLElement;
+  @Prop() closeable: boolean = true;
   @Prop() active: boolean = false;
   @State() _active: boolean = false;
 
@@ -24,16 +25,15 @@ export class DropdownComponent implements ComponentDidLoad {
   }
 
   private _id: string = AppHelper.GetIdWithPrefix("dropdown");
+  private _menuId: string = AppHelper.GetIdWithPrefix("dropdown-menu");
 
   componentDidLoad() {
     this._active = this.active;
   }
 
-  @Listen("body:click")
-  BodyClickHandler(event) {
-    if (event.target.closest(`#${this._id}`)) return;
-
-    this._active = false;
+  @Listen("window:click")
+  WindowClickHandler(event) {
+    this._active = this.IsCloseable(event);
   }
 
   render() {
@@ -47,7 +47,7 @@ export class DropdownComponent implements ComponentDidLoad {
         >
           <slot name="button" />
         </div>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" id={`${this._menuId}`}>
           <slot name="menu" />
         </div>
       </div>
@@ -56,5 +56,16 @@ export class DropdownComponent implements ComponentDidLoad {
 
   private Toggle() {
     this._active = !this._active;
+  }
+
+  private IsCloseable(event: any): boolean {
+    let result: boolean = false;
+    if (this.closeable && event.target.closest(`#${this._menuId}`)) {
+      result = false;
+    } else if (event.target.closest(`#${this._id}`)) {
+      result = this._active;
+    }
+
+    return result;
   }
 }
