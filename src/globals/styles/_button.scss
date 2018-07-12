@@ -100,4 +100,23 @@
       border: 1px solid transparent;
     }
   }
+  &.brn-button__icon--right {
+    .brn-button__icon {
+      margin-right: 0;
+      margin-left: 0.45rem;
+    }
+  }
+  .brn-button__icon {
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 0.8rem;
+    vertical-align: middle;
+    margin-right: 0.45rem;
+    &:before {
+      line-height: 0.8rem;
+    }
+    &.brn-button__icon--small {
+      font-size: 1rem;
+    }
+  }
 }

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+  <link href="https://unpkg.com/ionicons@4.2.4/dist/css/ionicons.min.css" rel="stylesheet">
   <link href="/build/bruno.css" rel="stylesheet">
   <script src="/build/bruno.js"></script>
 
@@ -156,6 +157,25 @@
     <brn-column columns="3" total="12"></brn-column>
     <brn-column columns="6" total="12">
       <div class="text-center">
+        <div class="brn-button brn-button--primary">
+          <i class="brn-button__icon ion-ios-git-branch"></i> Lorem ipsum
+        </div>
+
+        <div class="brn-button brn-button--light brn-button__icon--right">
+          Lorem ipsum
+          <i class="brn-button__icon ion-ios-contact"></i>
+        </div>
+      </div>
+    </brn-column>
+    <brn-column columns="3" total="12"></brn-column>
+  </brn-row>
+
+  <hr />
+
+  <brn-row>
+    <brn-column columns="3" total="12"></brn-column>
+    <brn-column columns="6" total="12">
+      <div class="text-center">
         <brn-checkbox checked="true" type="dark" text="Dark" />
         <brn-checkbox checked="true" type="light" text="Light" />
         <brn-checkbox checked="true" type="info" text="Info" />
@@ -211,14 +231,20 @@
     <brn-column columns="6" total="12">
       <div class="text-center">
         <brn-dropdown>
-          <div slot="button" class="brn-button brn-button--primary">Text only</div>
+          <div slot="button" class="brn-button brn-button--primary brn-button__icon--right">
+            Text only
+            <i class="brn-button__icon brn-button__icon--small ion-ios-arrow-down"></i>
+          </div>
           <div slot="menu">
-            test
+            Lorem ipsum dolor sit amet
           </div>
         </brn-dropdown>
 
         <brn-dropdown>
-          <div slot="button" class="brn-button brn-button--secondary">Menu options</div>
+          <div slot="button" class="brn-button brn-button--light brn-button__icon--right">
+            Menu options
+            <i class="brn-button__icon brn-button__icon--small ion-ios-arrow-down"></i>
+          </div>
           <div slot="menu">
             <ul>
               <li>
