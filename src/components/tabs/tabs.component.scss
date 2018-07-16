@@ -1,0 +1,22 @@
+brn-tabs {
+  .brn-tabs {
+    display: block;
+    border-bottom: 1px solid color(light-hover);
+    margin-bottom: 0.5rem;
+    &__tab {
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      color: color(secondary);
+      font-size: 0.875rem;
+      padding: 0 0.85rem 0.5rem 0.85rem;
+      margin-bottom: -1px;
+      @include user-select-none();
+      &.active {
+        color: color(primary);
+        border-bottom: 1px solid color(primary);
+      }
+    }
+  }
+}

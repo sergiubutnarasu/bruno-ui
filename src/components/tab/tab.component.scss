@@ -1,0 +1,8 @@
+brn-tab {
+  > div {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}

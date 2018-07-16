@@ -27,7 +27,11 @@ declare global {
 
 import {
   StyleType,
+  TabType,
 } from './objects/types';
+import {
+  EventEmitter,
+} from '@stencil/core';
 
 declare global {
 
@@ -204,6 +208,76 @@ declare global {
   }
   namespace JSXElements {
     export interface BrnRowAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BrnTab {
+      'active': boolean;
+      'name': string;
+    }
+  }
+
+  interface HTMLBrnTabElement extends StencilComponents.BrnTab, HTMLStencilElement {}
+
+  var HTMLBrnTabElement: {
+    prototype: HTMLBrnTabElement;
+    new (): HTMLBrnTabElement;
+  };
+  interface HTMLElementTagNameMap {
+    'brn-tab': HTMLBrnTabElement;
+  }
+  interface ElementTagNameMap {
+    'brn-tab': HTMLBrnTabElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'brn-tab': JSXElements.BrnTabAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BrnTabAttributes extends HTMLAttributes {
+      'active'?: boolean;
+      'name'?: string;
+      'onTabChanged'?: (event: CustomEvent<TabType>) => void;
+      'onTabLoaded'?: (event: CustomEvent<TabType>) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface BrnTabs {
+
+    }
+  }
+
+  interface HTMLBrnTabsElement extends StencilComponents.BrnTabs, HTMLStencilElement {}
+
+  var HTMLBrnTabsElement: {
+    prototype: HTMLBrnTabsElement;
+    new (): HTMLBrnTabsElement;
+  };
+  interface HTMLElementTagNameMap {
+    'brn-tabs': HTMLBrnTabsElement;
+  }
+  interface ElementTagNameMap {
+    'brn-tabs': HTMLBrnTabsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'brn-tabs': JSXElements.BrnTabsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BrnTabsAttributes extends HTMLAttributes {
 
     }
   }
