@@ -1,4 +1,4 @@
-[![npm][npm-badge]][npm-badge-url] [![Build With Stencil][stencil-badge]][stencil-badge-url] [![Build Status][circle-badge]][circle-badge-url]
+[![Build With Stencil][stencil-badge]][stencil-badge-url] [![npm][npm-badge]][npm-badge-url] [![Build Status][circle-badge]][circle-badge-url]
 
 # Bruno UI Kit
 
