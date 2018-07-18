@@ -14,8 +14,8 @@ brn-tabs {
       margin-bottom: -1px;
       @include user-select-none();
       &.active {
-        color: color(primary);
-        border-bottom: 1px solid color(primary);
+        color: color(dark);
+        border-bottom: 1px solid color(dark);
       }
     }
   }

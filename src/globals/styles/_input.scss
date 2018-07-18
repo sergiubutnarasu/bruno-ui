@@ -1,0 +1,109 @@
+.brn-input {
+    position: relative;
+    display: inline-block;
+
+    &.brn-input--rounded {
+        input {
+            @include border-radius(2rem);
+        }
+    }
+
+    &.brn-input--block {
+        display: block;
+
+        input {
+            display: block;
+        }
+    }
+
+    &.brn-input--danger {
+        input {
+            background-color: rgba(color(danger), 0.05);
+            color: color(danger);
+            border-color: color(danger);
+
+            &:focus {
+                outline: 0;
+                color: color(danger);
+                border-color: color(danger-hover);
+            }
+
+            &::placeholder {
+                color: rgba(color(danger), 0.8);
+                opacity: 1;
+            }
+
+            &:-ms-input-placeholder {
+                color: rgba(color(danger), 0.8);
+            }
+
+            &::-ms-input-placeholder {
+                color: rgba(color(danger), 0.8);
+            }
+        }
+    }
+
+    &.brn-input--with-icon {
+        input {
+            padding-left: 2.5rem;
+        }
+
+        .brn-input__icon {
+            position: absolute;
+            pointer-events: none;
+            font-size: 1.2rem;
+            color: color(secondary);
+            top: 0.4rem;
+            left: 1rem;
+        }
+    }
+
+    &.brn-input--with-icon-right {
+        input {
+            padding-right: 2.5rem;
+        }
+
+        .brn-input__icon {
+            position: absolute;
+            pointer-events: none;
+            font-size: 1.2rem;
+            color: color(secondary);
+            top: 0.4rem;
+            right: 1rem;
+        }
+    }
+
+    input {
+        display: inline-block;
+        min-width: 250px;
+        text-align: left;
+        padding: 0.5625rem 0.9375rem;
+        border: 1px solid color(secondary);
+        text-decoration: none;
+        text-transform: none;
+        font-size: 0.875rem;
+        line-height: 1;
+        color: color(secondary);
+
+        @include border-radius(4px);
+
+        &:focus {
+            outline: 0;
+            color: color(dark);
+            border-color: color(secondary-hover);
+        }
+
+        &::placeholder {
+            color: rgba(color(secondary), 0.8);
+            opacity: 1;
+        }
+
+        &:-ms-input-placeholder {
+            color: rgba(color(secondary), 0.8);
+        }
+
+        &::-ms-input-placeholder {
+            color: rgba(color(secondary), 0.8);
+        }
+    }
+}
