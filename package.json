@@ -35,7 +35,15 @@
   "bugs": {
     "url": "https://github.com/sergiubutnarasu/bruno-ui"
   },
-  "homepage": "https://github.com/sergiubutnarasu/bruno-ui",
+  "homepage": "http://bruno.butnarasu.ro/",
+  "keywords": [
+    "web components",
+    "components",
+    "stencil",
+    "bruno",
+    "ui",
+    "ui kit"
+  ],
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
