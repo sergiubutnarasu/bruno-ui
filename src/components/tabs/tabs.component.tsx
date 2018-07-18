@@ -15,7 +15,13 @@ export class TabsComponent implements ComponentWillLoad {
   @Listen("tabLoaded")
   TabLoadedHandler(event: CustomEvent) {
     const tab: TabType = event.detail as TabType;
-    this._tabs.splice(tab.Index, 0, tab);
+
+    if (this._tabs.length - 1 < tab.Index) {
+      this._tabs.length = tab.Index + 1;
+    }
+
+    this._tabs[tab.Index] = tab;
+
     this._tabs = [...this._tabs];
   }
 
@@ -33,7 +39,7 @@ export class TabsComponent implements ComponentWillLoad {
     return (
       <div>
         <div class="brn-tabs">
-          {this._tabs.map(tab => {
+          {this._tabs.filter(x => x).map(tab => {
             return (
               <div
                 class={{ "brn-tabs__tab": true, active: tab.Active }}
