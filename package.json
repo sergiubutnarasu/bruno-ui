@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "Bruno UI Kit",
   "module": "dist/esm/index.js",
-  "main": "dist/bruno.js",
+  "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
