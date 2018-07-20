@@ -12,5 +12,9 @@ exports.config = {
     }
   ],
   globalStyle: "src/globals/style.scss",
-  plugins: [sass()]
+  plugins: [
+    sass({
+      injectGlobalPaths: ["src/globals/_common.scss"]
+    })
+  ]
 };
