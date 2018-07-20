@@ -11,10 +11,6 @@ exports.config = {
       serviceWorker: false
     }
   ],
-  globalStyle: 'src/globals/style.scss',
-  plugins: [
-    sass({
-      injectGlobalPaths: ["src/globals/_common.scss"]
-    })
-  ]
+  globalStyle: "src/globals/style.scss",
+  plugins: [sass()]
 };

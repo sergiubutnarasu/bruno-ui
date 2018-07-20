@@ -35,3 +35,24 @@ p {
     margin: 0;
     padding: 0;
 }
+
+.display {
+    font-weight: 300;
+    margin-bottom: 25px;
+    &--small {
+        font-size: 24px;
+    }
+    &--medium {
+        font-size: 32px;
+    }
+    &--large {
+        font-size: 38px;
+    }
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    margin: 25px 0;
+}
