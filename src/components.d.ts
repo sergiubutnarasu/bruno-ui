@@ -38,7 +38,6 @@ declare global {
   namespace StencilComponents {
     interface BrnCheckbox {
       'checked': boolean;
-      'text': string;
       'type': keyof StyleType;
     }
   }
@@ -64,7 +63,6 @@ declare global {
     export interface BrnCheckboxAttributes extends HTMLAttributes {
       'checked'?: boolean;
       'onChanged'?: (event: CustomEvent<boolean>) => void;
-      'text'?: string;
       'type'?: keyof StyleType;
     }
   }
@@ -147,7 +145,6 @@ declare global {
     interface BrnRadio {
       'checked': boolean;
       'name': string;
-      'text': string;
       'type': keyof StyleType;
     }
   }
@@ -174,7 +171,6 @@ declare global {
       'checked'?: boolean;
       'name'?: string;
       'onChanged'?: (event: CustomEvent<boolean>) => void;
-      'text'?: string;
       'type'?: keyof StyleType;
     }
   }
@@ -289,7 +285,6 @@ declare global {
   namespace StencilComponents {
     interface BrnToggle {
       'checked': boolean;
-      'text': string;
       'type': keyof StyleType;
     }
   }
@@ -315,7 +310,6 @@ declare global {
     export interface BrnToggleAttributes extends HTMLAttributes {
       'checked'?: boolean;
       'onChanged'?: (event: CustomEvent<boolean>) => void;
-      'text'?: string;
       'type'?: keyof StyleType;
     }
   }

@@ -8,7 +8,6 @@ import { StyleType } from "../../objects/types";
 export class ToggleComponent {
   @Event() changed: EventEmitter<boolean>;
   @Prop() checked: boolean;
-  @Prop() text: string;
   @Prop() type: keyof StyleType = "primary";
 
   render() {
@@ -19,8 +18,12 @@ export class ToggleComponent {
           checked={this.checked}
           onChange={e => this.OnChangeHandler(e)}
         />
-        <span class={`brn-toggle__checkmark brn-toggle__checkmark--${this.type}`} />
-        <span class="brn-toggle__text">{this.text}</span>
+        <span
+          class={`brn-toggle__checkmark brn-toggle__checkmark--${this.type}`}
+        />
+        <span class="brn-toggle__text">
+          <slot />
+        </span>
       </label>
     );
   }

@@ -28,13 +28,6 @@ describe("brn-checkbox", () => {
       expect(target.checked).toBe(true);
     });
 
-    it("should work with text parameter", async () => {
-      element.text = "test";
-      await testWindow.flush();
-      const target = element.getElementsByClassName("brn-checkbox__text")[0];
-      expect(target.innerHTML).toBe("test");
-    });
-
     it("should work with type parameter", async () => {
       element.type = "primary";
       await testWindow.flush();

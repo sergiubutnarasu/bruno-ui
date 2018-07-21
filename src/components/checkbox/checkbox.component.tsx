@@ -8,7 +8,6 @@ import { StyleType } from "../../objects/types";
 export class CheckboxComponent {
   @Event() changed: EventEmitter<boolean>;
   @Prop() checked: boolean;
-  @Prop() text: string;
   @Prop() type: keyof StyleType = "primary";
 
   render() {
@@ -19,8 +18,14 @@ export class CheckboxComponent {
           checked={this.checked}
           onChange={e => this.OnChangeHandler(e)}
         />
-        <span class={`brn-checkbox__checkmark brn-checkbox__checkmark--${this.type}`} />
-        <span class="brn-checkbox__text">{this.text}</span>
+        <span
+          class={`brn-checkbox__checkmark brn-checkbox__checkmark--${
+            this.type
+          }`}
+        />
+        <span class="brn-checkbox__text">
+          <slot />
+        </span>
       </label>
     );
   }

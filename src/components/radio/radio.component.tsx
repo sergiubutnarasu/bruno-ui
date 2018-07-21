@@ -8,7 +8,6 @@ import { StyleType } from "../../objects/types";
 export class RadioButtonComponent {
   @Event() changed: EventEmitter<boolean>;
   @Prop() checked: boolean;
-  @Prop() text: string;
   @Prop() name: string;
   @Prop() type: keyof StyleType = "primary";
 
@@ -21,8 +20,12 @@ export class RadioButtonComponent {
           checked={this.checked}
           onChange={e => this.OnChangeHandler(e)}
         />
-        <span class={`brn-radio__checkmark brn-radio__checkmark--${this.type}`} />
-        <span class="brn-radio__text">{this.text}</span>
+        <span
+          class={`brn-radio__checkmark brn-radio__checkmark--${this.type}`}
+        />
+        <span class="brn-radio__text">
+          <slot />
+        </span>
       </label>
     );
   }
