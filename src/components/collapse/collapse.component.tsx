@@ -19,22 +19,25 @@ export class CollapseComponent implements ComponentDidLoad {
 
   render() {
     return (
-      <div class="brn-collapse">
-        <div class={{
-            "brn-collapse__header": true,
-            "brn-collapse__header--active": this._active
-          }}>
-          <slot name="header" />
-        </div>
+      <div
+        class={{ "brn-collapse": true, "brn-collapse--active": this._active }}
+      >
         <div
-          class={{
-            "brn-collapse__body": true,
-            "brn-collapse__body--active": this._active
+          class="brn-collapse__header"
+          onClick={() => {
+            this.Toggle();
           }}
         >
+          <slot name="header" />
+        </div>
+        <div class="brn-collapse__body">
           <slot name="body" />
         </div>
       </div>
     );
+  }
+
+  private Toggle() {
+    this._active = !this._active;
   }
 }

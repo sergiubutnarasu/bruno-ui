@@ -20,8 +20,8 @@
     "test.watch": "jest --runInBand --watch"
   },
   "devDependencies": {
-    "@stencil/core": "^0.10.7",
-    "@stencil/sass": "0.0.5",
+    "@stencil/core": "^0.11.3",
+    "@stencil/sass": "0.1.0",
     "@types/jest": "^23.1.0",
     "jest": "^23.1.0",
     "np": "^2.16.0"
