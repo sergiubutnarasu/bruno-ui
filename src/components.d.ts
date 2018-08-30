@@ -60,6 +60,10 @@ declare global {
 
     }
 
+    interface BrnSlider {
+
+    }
+
     interface BrnTab {
       'active': boolean;
       'name': string;
@@ -124,6 +128,14 @@ declare global {
     };
     
 
+    interface HTMLBrnSliderElement extends StencilComponents.BrnSlider, HTMLStencilElement {}
+
+    var HTMLBrnSliderElement: {
+      prototype: HTMLBrnSliderElement;
+      new (): HTMLBrnSliderElement;
+    };
+    
+
     interface HTMLBrnTabElement extends StencilComponents.BrnTab, HTMLStencilElement {}
 
     var HTMLBrnTabElement: {
@@ -157,6 +169,7 @@ declare global {
     'brn-dropdown': JSXElements.BrnDropdownAttributes;
     'brn-radio': JSXElements.BrnRadioAttributes;
     'brn-row': JSXElements.BrnRowAttributes;
+    'brn-slider': JSXElements.BrnSliderAttributes;
     'brn-tab': JSXElements.BrnTabAttributes;
     'brn-tabs': JSXElements.BrnTabsAttributes;
     'brn-toggle': JSXElements.BrnToggleAttributes;
@@ -196,6 +209,10 @@ declare global {
 
     }
 
+    export interface BrnSliderAttributes extends HTMLAttributes {
+
+    }
+
     export interface BrnTabAttributes extends HTMLAttributes {
       'active'?: boolean;
       'name'?: string;
@@ -221,6 +238,7 @@ declare global {
     'brn-dropdown': HTMLBrnDropdownElement
     'brn-radio': HTMLBrnRadioElement
     'brn-row': HTMLBrnRowElement
+    'brn-slider': HTMLBrnSliderElement
     'brn-tab': HTMLBrnTabElement
     'brn-tabs': HTMLBrnTabsElement
     'brn-toggle': HTMLBrnToggleElement
@@ -233,6 +251,7 @@ declare global {
     'brn-dropdown': HTMLBrnDropdownElement;
     'brn-radio': HTMLBrnRadioElement;
     'brn-row': HTMLBrnRowElement;
+    'brn-slider': HTMLBrnSliderElement;
     'brn-tab': HTMLBrnTabElement;
     'brn-tabs': HTMLBrnTabsElement;
     'brn-toggle': HTMLBrnToggleElement;
