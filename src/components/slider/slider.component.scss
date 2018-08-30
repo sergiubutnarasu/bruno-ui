@@ -14,7 +14,9 @@ brn-slider {
             width: 1rem;
             height: 1rem;
             background-color: color(primary);
+            cursor: pointer;
 
+            @include user-select-none;
             @include border-radius(1rem);
         }
     }
