@@ -1,11 +1,14 @@
 brn-slider {
     .slider {
         position: relative;
-        display: block;
-        height: .5rem;
-        background-color: color(light);
 
-        @include border-radius(1rem);
+        .slider__bar {
+            display: block;
+            height: .5rem;
+            background-color: color(light);
+
+            @include border-radius(1rem);
+        }
 
         .slider__handle {
             top: -.25rem;

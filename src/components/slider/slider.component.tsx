@@ -1,10 +1,16 @@
-import { Component, Listen, State, Element } from "@stencil/core";
+import {
+  Component,
+  Listen,
+  State,
+  Element,
+  ComponentDidLoad
+} from "@stencil/core";
 
 @Component({
   tag: "brn-slider",
   styleUrl: "slider.component.scss"
 })
-export class SliderComponent {
+export class SliderComponent implements ComponentDidLoad {
   @Element()
   _element: HTMLElement;
   @State()
@@ -15,7 +21,6 @@ export class SliderComponent {
   @Listen("document:mousemove")
   MouseMoveHandler(e: MouseEvent) {
     if (this._active) {
-      this.handle = this.GetHandle();
       this.SetHandlePosition(e);
     }
   }
@@ -25,9 +30,19 @@ export class SliderComponent {
     this._active = false;
   }
 
+  componentDidLoad() {
+    this.handle = this.GetHandle();
+  }
+
   render() {
     return (
       <div class="slider">
+        <div
+          class="slider__bar"
+          onClick={e => {
+            this.SetHandlePosition(e);
+          }}
+        />
         <div
           class="slider__handle"
           onMouseDown={() => {
@@ -61,7 +76,10 @@ export class SliderComponent {
     if (position < this._element.offsetLeft) {
       position = 0;
     } else if (e.clientX > slider.offsetWidth) {
-      position = slider.offsetWidth - this._element.offsetLeft - this.handle.clientWidth / 2;
+      position =
+        slider.offsetWidth -
+        this._element.offsetLeft -
+        this.handle.clientWidth / 2;
     }
 
     return position;
