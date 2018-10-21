@@ -11,20 +11,21 @@
   ],
   "scripts": {
     "build": "stencil build",
-    "dev": "stencil build --dev --watch --serve",
-    "deploy": "npm run build && np",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "test": "jest --runInBand",
-    "test.coverage": "jest --coverage --runInBand",
-    "test.watch": "jest --runInBand --watch"
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "deploy": "npm run build && np"
   },
   "devDependencies": {
-    "@stencil/core": "^0.11.3",
+    "@stencil/core": "~0.13.2",
     "@stencil/sass": "0.1.0",
-    "@types/jest": "^23.1.0",
-    "jest": "^23.1.0",
-    "np": "^2.16.0"
+    "@types/jest": "23.3.5",
+    "@types/puppeteer": "1.9.0",
+    "jest": "23.5.0",
+    "jest-environment-node": "23.4.0",
+    "pixelmatch": "4.0.2",
+    "puppeteer": "1.7.0",
+    "np": "2.16.0"
   },
   "repository": {
     "type": "git",
@@ -43,18 +44,5 @@
     "bruno",
     "ui",
     "ui kit"
-  ],
-  "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
-  }
+  ]
 }
