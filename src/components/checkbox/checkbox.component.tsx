@@ -3,7 +3,8 @@ import { StyleType } from "../../objects/types";
 
 @Component({
   tag: "brn-checkbox",
-  styleUrl: "checkbox.component.scss"
+  styleUrl: "checkbox.component.scss",
+  shadow: true
 })
 export class CheckboxComponent {
   @Event() changed: EventEmitter<boolean>;
@@ -31,7 +32,6 @@ export class CheckboxComponent {
   }
 
   private OnChangeHandler(event: any): any {
-    // TODO: Need test
     this.changed.emit(event.target.checked);
   }
 }
