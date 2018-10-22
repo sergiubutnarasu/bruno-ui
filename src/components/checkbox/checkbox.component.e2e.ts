@@ -10,12 +10,10 @@ describe('checkbox-component', () => {
 
         const onChange = await page.spyOnEvent('changed');
         const el = await page.find('brn-checkbox');
-        const checkbox = await page.find('brn-checkbox >>> input');
         const checkmark = await page.find('brn-checkbox >>> .brn-checkbox__checkmark');
         const text = await page.find('brn-checkbox >>> .brn-checkbox__text');
 
         expect(el).toBeDefined();
-        expect(checkbox).not.toHaveAttribute('checked');
         expect(checkmark).toHaveClass('brn-checkbox__checkmark--primary');
         expect(text).toEqualHtml(`
             <span class="brn-checkbox__text">
@@ -23,8 +21,8 @@ describe('checkbox-component', () => {
             </span>
         `);
 
-        checkbox.click();
-        await page.waitForChanges();
+        el.click();
+        await page.waitForEvent('click');
 
         expect(onChange).toHaveReceivedEvent();
     });
