@@ -17,5 +17,9 @@ export const config: Config = {
     sass({
       injectGlobalPaths: ["src/globals/_common.scss"]
     })
-  ]
+  ],
+  testing: {
+    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+    browserHeadless: true
+  }
 };
