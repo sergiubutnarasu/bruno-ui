@@ -2,7 +2,8 @@ import { Component, Prop, Element } from "@stencil/core";
 
 @Component({
   tag: "brn-column",
-  styleUrl: "column.component.scss"
+  styleUrl: "column.component.scss",
+  shadow: true
 })
 export class ColumnComponent {
   @Prop() columns: number;
@@ -14,8 +15,10 @@ export class ColumnComponent {
     this._el.style.width = `${this.CalculateWidth()}%`;
 
     return (
-      <div>
-        <slot />
+      <div class="brn-column">
+        <div>
+          <slot />
+        </div>
       </div>
     );
   }

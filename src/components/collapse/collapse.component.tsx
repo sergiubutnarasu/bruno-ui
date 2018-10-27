@@ -2,7 +2,8 @@ import { Component, Prop, State, ComponentDidLoad, Watch } from "@stencil/core";
 
 @Component({
   tag: "brn-collapse",
-  styleUrl: "collapse.component.scss"
+  styleUrl: "collapse.component.scss",
+  shadow: true
 })
 export class CollapseComponent implements ComponentDidLoad {
   @Prop() active: boolean = false;

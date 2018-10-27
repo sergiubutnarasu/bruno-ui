@@ -11,7 +11,8 @@ import { AppHelper } from "../../helpers/app.helper";
 
 @Component({
   tag: "brn-dropdown",
-  styleUrl: "dropdown.component.scss"
+  styleUrl: "dropdown.component.scss",
+  shadow: false
 })
 export class DropdownComponent implements ComponentDidLoad {
   @Element() _element: HTMLElement;
@@ -24,8 +25,13 @@ export class DropdownComponent implements ComponentDidLoad {
     this._active = newValue;
   }
 
-  private _id: string = AppHelper.GetIdWithPrefix("dropdown");
-  private _menuId: string = AppHelper.GetIdWithPrefix("dropdown__menu");
+  private _id: string;
+  private _menuId: string;
+
+  constructor() {
+    this._id = AppHelper.GetIdWithPrefix("dropdown");
+    this._menuId = AppHelper.GetIdWithPrefix("dropdown__menu");
+  }
 
   componentDidLoad() {
     this._active = this.active;
@@ -38,7 +44,7 @@ export class DropdownComponent implements ComponentDidLoad {
 
   render() {
     return (
-      <div class={{ active: this._active }} id={`${this._id}`}>
+      <div class={{ 'brn-dropdown': true, active: this._active }} id={`${this._id}`}>
         <div
           class="dropdown__button"
           onClick={() => {
