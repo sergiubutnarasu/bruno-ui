@@ -77,7 +77,7 @@ export class TabComponent implements ComponentWillLoad, ComponentDidLoad {
       return Array.prototype.indexOf.call(tabs, this._element);
     }
 
-    console.error('"brn-tab" components must be wrapped with "brn-tabs" component');
+    console.warn('"brn-tab" components must be wrapped with "brn-tabs" component');
     return 0;
   }
 }
