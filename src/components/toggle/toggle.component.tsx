@@ -29,7 +29,6 @@ export class ToggleComponent {
   }
 
   private OnChangeHandler(event: any): any {
-    // TODO: Need test
     this.changed.emit(event.target.checked);
   }
 }

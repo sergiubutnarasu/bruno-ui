@@ -43,16 +43,16 @@ export class DropdownComponent implements ComponentDidLoad {
 
   render() {
     return (
-      <div class={{ 'brn-dropdown': true, active: this._active }} id={`${this._id}`}>
+      <div class={{ 'brn-dropdown--active': this._active }} id={`${this._id}`}>
         <div
-          class="dropdown__button"
+          class="brn-dropdown__button"
           onClick={() => {
             this.Toggle();
           }}
         >
           <slot name="button" />
         </div>
-        <div class="dropdown__menu" id={`${this._menuId}`}>
+        <div class="brn-dropdown__menu" id={`${this._menuId}`}>
           <slot name="menu" />
         </div>
       </div>
