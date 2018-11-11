@@ -17,14 +17,14 @@
     "deploy": "npm run build && np"
   },
   "devDependencies": {
-    "@stencil/core": "0.14.1",
+    "@stencil/core": "0.15.2",
     "@stencil/sass": "0.1.1",
     "@types/jest": "23.3.5",
-    "@types/puppeteer": "1.9.0",
+    "@types/puppeteer": "1.10.0",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
     "jest-environment-node": "23.4.0",
-    "np": "2.16.0",
+    "np": "3.0.4",
     "pixelmatch": "4.0.2",
     "puppeteer": "1.8.0"
   },
