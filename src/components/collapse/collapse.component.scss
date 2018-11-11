@@ -1,11 +1,13 @@
-div {
-    display: block;
-    &.brn-collapse--active {
-        .brn-collapse__body {
-            display: block;
+brn-collapse {
+    >div {
+        display: block;
+        &.brn-collapse--active {
+            .brn-collapse__body {
+                display: block;
+            }
         }
-    }
-    .brn-collapse__body {
-        display: none;
+        .brn-collapse__body {
+            display: none;
+        }
     }
 }

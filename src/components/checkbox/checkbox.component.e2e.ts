@@ -10,15 +10,13 @@ describe('checkbox-component', () => {
 
         const onChange = await page.spyOnEvent('changed');
         const el = await page.find('brn-checkbox');
-        const checkmark = await page.find('brn-checkbox >>> .brn-checkbox__checkmark');
-        const text = await page.find('brn-checkbox >>> .brn-checkbox__text');
+        const checkmark = await page.find('.brn-checkbox__checkmark');
+        const text = await page.find('.brn-checkbox__text');
 
         expect(el).toBeDefined();
         expect(checkmark).toHaveClass('brn-checkbox__checkmark--primary');
         expect(text).toEqualHtml(`
-            <span class="brn-checkbox__text">
-                <slot></slot>
-            </span>
+            <span class=\"brn-checkbox__text\"></span>
         `);
 
         el.click();
@@ -34,7 +32,7 @@ describe('checkbox-component', () => {
             <brn-checkbox type="secondary"></brn-checkbox>
         `);
 
-        const checkmark = await page.find('brn-checkbox >>> .brn-checkbox__checkmark');
+        const checkmark = await page.find('.brn-checkbox__checkmark');
 
         expect(checkmark).toHaveClass('brn-checkbox__checkmark--secondary');
     });

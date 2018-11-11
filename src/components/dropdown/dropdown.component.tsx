@@ -11,8 +11,7 @@ import { AppHelper } from "../../helpers/app.helper";
 
 @Component({
   tag: "brn-dropdown",
-  styleUrl: "dropdown.component.scss",
-  shadow: false
+  styleUrl: "dropdown.component.scss"
 })
 export class DropdownComponent implements ComponentDidLoad {
   @Element() _element: HTMLElement;

@@ -8,7 +8,7 @@ describe('collapse-component', () => {
             <brn-collapse></brn-collapse>
         `);
 
-        const collapseElement = await page.find('brn-collapse >>> .brn-collapse');
+        const collapseElement = await page.find('.brn-collapse');
         expect(collapseElement).not.toHaveClass('brn-collapse--active');
     });
 
@@ -19,7 +19,7 @@ describe('collapse-component', () => {
             <brn-collapse active="true"></brn-collapse>
         `);
 
-        const collapseElement = await page.find('brn-collapse >>> .brn-collapse');
+        const collapseElement = await page.find('.brn-collapse');
         expect(collapseElement).toHaveClass('brn-collapse--active');
     });
 });

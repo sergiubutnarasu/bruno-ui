@@ -1,62 +1,64 @@
-label {
-    color: color(dark);
-    position: relative;
-    display: inline-block;
-    input {
-        display: none;
-        &:checked {
-            &~.brn-checkbox__checkmark {
-                @each $current-type in $type-list {
-                    &.brn-checkbox__checkmark--#{$current-type} {
-                        background-color: color(#{$current-type});
+brn-checkbox {
+    label {
+        color: color(dark);
+        position: relative;
+        display: inline-block;
+        input {
+            display: none;
+            &:checked {
+                &~.brn-checkbox__checkmark {
+                    @each $current-type in $type-list {
+                        &.brn-checkbox__checkmark--#{$current-type} {
+                            background-color: color(#{$current-type});
+                        }
                     }
-                }
-                &.brn-checkbox__checkmark--light {
-                    background-color: color(light);
+                    &.brn-checkbox__checkmark--light {
+                        background-color: color(light);
+                        &:after {
+                            border-bottom: 2px solid color(dark);
+                            border-right: 2px solid color(dark);
+                        }
+                    }
                     &:after {
-                        border-bottom: 2px solid color(dark);
-                        border-right: 2px solid color(dark);
+                        opacity: 1;
+                        visibility: visible;
                     }
-                }
-                &:after {
-                    opacity: 1;
-                    visibility: visible;
                 }
             }
         }
-    }
-    .brn-checkbox__checkmark {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1rem;
-        height: 1rem;
-        background-color: color(light);
-        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.15s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-        cursor: pointer;
-        @include border-radius(2px);
-        @include user-select-none;
-        &:hover {
-            background-color: color(light-hover);
-        }
-        &:after {
-            opacity: 0;
-            visibility: hidden;
-            content: "";
+        .brn-checkbox__checkmark {
             display: block;
             position: absolute;
-            top: 0.16rem;
-            left: 0.33rem;
-            width: 0.20rem;
-            height: 0.45rem;
-            border-bottom: 2px solid color(white);
-            border-right: 2px solid color(white);
-            @include rotate(45deg);
+            top: 0;
+            left: 0;
+            width: 1rem;
+            height: 1rem;
+            background-color: color(light);
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.15s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+            cursor: pointer;
+            @include border-radius(2px);
+            @include user-select-none;
+            &:hover {
+                background-color: color(light-hover);
+            }
+            &:after {
+                opacity: 0;
+                visibility: hidden;
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0.16rem;
+                left: 0.33rem;
+                width: 0.20rem;
+                height: 0.45rem;
+                border-bottom: 2px solid color(white);
+                border-right: 2px solid color(white);
+                @include rotate(45deg);
+            }
         }
-    }
-    .brn-checkbox__text {
-        padding-left: 1.5rem;
-        margin-right: 1rem;
+        .brn-checkbox__text {
+            padding-left: 1.5rem;
+            margin-right: 1rem;
+        }
     }
 }

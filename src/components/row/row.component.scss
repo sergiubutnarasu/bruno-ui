@@ -1,8 +1,11 @@
-.brn-row {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    border: 0;
-    line-height: initial;
+brn-row {
+    display: block;
+    >div {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 0;
+        line-height: initial;
+    }
 }
