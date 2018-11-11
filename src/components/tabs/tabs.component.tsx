@@ -42,7 +42,7 @@ export class TabsComponent implements ComponentWillLoad {
           {this._tabs.filter(x => x).map(tab => {
             return (
               <div
-                class={{ "brn-tabs__tab": true, active: tab.Active }}
+                class={{ "brn-tabs__tab": true, 'brn-tabs__tab--active': tab.Active }}
                 onClick={() => {
                   this.TabChangeHandler(tab);
                 }}

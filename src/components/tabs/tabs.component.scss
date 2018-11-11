@@ -13,7 +13,7 @@ brn-tabs {
       padding: 0 0.85rem 0.5rem 0.85rem;
       margin-bottom: -1px;
       @include user-select-none();
-      &.active {
+      &--active {
         color: color(dark);
         border-bottom: 1px solid color(dark);
       }

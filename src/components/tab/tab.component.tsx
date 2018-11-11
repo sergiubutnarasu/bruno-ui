@@ -44,7 +44,7 @@ export class TabComponent implements ComponentWillLoad, ComponentDidLoad {
 
   render() {
     return (
-      <div class={{ active: this._active }}>
+      <div class={{ 'brn-tab--active': this._active }}>
         <slot />
       </div>
     );
@@ -71,7 +71,13 @@ export class TabComponent implements ComponentWillLoad, ComponentDidLoad {
 
   private GetIndex() {
     const parent = this._element.closest("brn-tabs");
-    const tabs = parent.getElementsByTagName('brn-tab');
-    return Array.prototype.indexOf.call(tabs, this._element);
+
+    if (parent) {
+      const tabs = parent.getElementsByTagName('brn-tab');
+      return Array.prototype.indexOf.call(tabs, this._element);
+    }
+
+    console.error('"brn-tab" components must be wrapped with "brn-tabs" component');
+    return 0;
   }
 }
