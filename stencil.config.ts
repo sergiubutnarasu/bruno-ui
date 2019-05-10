@@ -4,12 +4,11 @@ import { sass } from "@stencil/sass";
 export const config: Config = {
   namespace: "bruno",
   outputTargets: [
-    {
-      type: "dist"
-    },
+    { type: "dist" },
+    { type: "docs" },
     {
       type: "www",
-      serviceWorker: false
+      serviceWorker: null
     }
   ],
   globalStyle: "src/globals/style.scss",
@@ -19,7 +18,7 @@ export const config: Config = {
     })
   ],
   testing: {
-    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+    browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
     browserHeadless: true
   }
 };

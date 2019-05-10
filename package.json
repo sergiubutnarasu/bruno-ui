@@ -1,8 +1,8 @@
 {
   "name": "bruno-ui",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "Bruno UI Kit",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -17,16 +17,14 @@
     "deploy": "npm run build && np"
   },
   "devDependencies": {
-    "@stencil/core": "0.15.2",
-    "@stencil/sass": "0.1.1",
-    "@types/jest": "23.3.5",
-    "@types/puppeteer": "1.10.0",
+    "@stencil/core": "0.18.1",
+    "@stencil/sass": "0.2.1",
+    "@types/jest": "23.3.14",
+    "@types/puppeteer": "1.12.4",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
-    "jest-environment-node": "23.4.0",
-    "np": "3.0.4",
-    "pixelmatch": "4.0.2",
-    "puppeteer": "1.8.0"
+    "np": "5.0.1",
+    "puppeteer": "1.11.0"
   },
   "repository": {
     "type": "git",
@@ -45,5 +43,8 @@
     "bruno",
     "ui",
     "ui kit"
-  ]
+  ],
+  "jest": {
+    "preset": "@stencil/core/testing"
+  }
 }
