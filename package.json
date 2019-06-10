@@ -2,9 +2,12 @@
   "name": "bruno-ui",
   "version": "0.4.0",
   "description": "Bruno UI Kit",
-  "module": "dist/index.mjs",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
   "types": "dist/types/components.d.ts",
+  "unpkg": "dist/bruno/bruno.js",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
