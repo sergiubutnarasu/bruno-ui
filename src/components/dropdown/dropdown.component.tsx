@@ -5,7 +5,8 @@ import {
   State,
   Watch,
   Listen,
-  ComponentDidLoad
+  ComponentDidLoad,
+  h
 } from "@stencil/core";
 import { AppHelper } from "../../helpers/app.helper";
 
@@ -36,14 +37,14 @@ export class DropdownComponent implements ComponentDidLoad {
     this._active = this.active;
   }
 
-  @Listen("window:click")
-  WindowClickHandler(event) {
+  @Listen("click", { target: "window" })
+  WindowClickHandler(event: MouseEvent) {
     this._active = this.IsCloseable(event);
   }
 
   render() {
     return (
-      <div class={{ 'brn-dropdown--active': this._active }} id={`${this._id}`}>
+      <div class={{ "brn-dropdown--active": this._active }} id={`${this._id}`}>
         <div
           class="brn-dropdown__button"
           onClick={() => {

@@ -1,4 +1,4 @@
-import { Component, State, ComponentWillLoad, Listen } from "@stencil/core";
+import { Component, State, ComponentWillLoad, Listen, h } from "@stencil/core";
 import { TabType } from "../../objects/types";
 
 @Component({

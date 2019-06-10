@@ -3,7 +3,8 @@ import {
   Listen,
   State,
   Element,
-  ComponentDidLoad
+  ComponentDidLoad,
+  h
 } from "@stencil/core";
 
 @Component({
@@ -18,14 +19,14 @@ export class SliderComponent implements ComponentDidLoad {
 
   private handle: HTMLElement;
 
-  @Listen("document:mousemove")
+  @Listen("mousemove", { target: "document" })
   MouseMoveHandler(e: MouseEvent) {
     if (this._active) {
       this.SetHandlePosition(e);
     }
   }
 
-  @Listen("document:mouseup")
+  @Listen("mouseup", { target: "document" })
   MouseUpHandler() {
     this._active = false;
   }

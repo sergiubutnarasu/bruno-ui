@@ -1,4 +1,4 @@
-import { Component, Prop, State, ComponentDidLoad, Watch } from "@stencil/core";
+import { Component, Prop, State, ComponentDidLoad, Watch, h } from "@stencil/core";
 
 @Component({
   tag: "brn-collapse",

@@ -5,124 +5,47 @@
  */
 
 
-import '@stencil/core';
-
-
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   StyleType,
   TabType,
 } from './objects/types';
-import {
-  EventEmitter,
-} from '@stencil/core';
-
 
 export namespace Components {
-
   interface BrnCheckbox {
     'checked': boolean;
     'type': keyof StyleType;
   }
-  interface BrnCheckboxAttributes extends StencilHTMLAttributes {
-    'checked'?: boolean;
-    'onChanged'?: (event: CustomEvent<boolean>) => void;
-    'type'?: keyof StyleType;
-  }
-
   interface BrnCollapse {
     'active': boolean;
   }
-  interface BrnCollapseAttributes extends StencilHTMLAttributes {
-    'active'?: boolean;
-  }
-
   interface BrnColumn {
     'columns': number;
     'total': number;
   }
-  interface BrnColumnAttributes extends StencilHTMLAttributes {
-    'columns'?: number;
-    'total'?: number;
-  }
-
   interface BrnDropdown {
     'active': boolean;
     'closeable': boolean;
   }
-  interface BrnDropdownAttributes extends StencilHTMLAttributes {
-    'active'?: boolean;
-    'closeable'?: boolean;
-  }
-
   interface BrnRadio {
     'checked': boolean;
     'name': string;
     'type': keyof StyleType;
   }
-  interface BrnRadioAttributes extends StencilHTMLAttributes {
-    'checked'?: boolean;
-    'name'?: string;
-    'onChanged'?: (event: CustomEvent<boolean>) => void;
-    'type'?: keyof StyleType;
-  }
-
   interface BrnRow {}
-  interface BrnRowAttributes extends StencilHTMLAttributes {}
-
   interface BrnSlider {}
-  interface BrnSliderAttributes extends StencilHTMLAttributes {}
-
   interface BrnTab {
     'active': boolean;
     'name': string;
   }
-  interface BrnTabAttributes extends StencilHTMLAttributes {
-    'active'?: boolean;
-    'name'?: string;
-    'onTabChanged'?: (event: CustomEvent<TabType>) => void;
-    'onTabLoaded'?: (event: CustomEvent<TabType>) => void;
-  }
-
   interface BrnTabs {}
-  interface BrnTabsAttributes extends StencilHTMLAttributes {}
-
   interface BrnToggle {
     'checked': boolean;
     'type': keyof StyleType;
   }
-  interface BrnToggleAttributes extends StencilHTMLAttributes {
-    'checked'?: boolean;
-    'onChanged'?: (event: CustomEvent<boolean>) => void;
-    'type'?: keyof StyleType;
-  }
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'BrnCheckbox': Components.BrnCheckbox;
-    'BrnCollapse': Components.BrnCollapse;
-    'BrnColumn': Components.BrnColumn;
-    'BrnDropdown': Components.BrnDropdown;
-    'BrnRadio': Components.BrnRadio;
-    'BrnRow': Components.BrnRow;
-    'BrnSlider': Components.BrnSlider;
-    'BrnTab': Components.BrnTab;
-    'BrnTabs': Components.BrnTabs;
-    'BrnToggle': Components.BrnToggle;
-  }
-
-  interface StencilIntrinsicElements {
-    'brn-checkbox': Components.BrnCheckboxAttributes;
-    'brn-collapse': Components.BrnCollapseAttributes;
-    'brn-column': Components.BrnColumnAttributes;
-    'brn-dropdown': Components.BrnDropdownAttributes;
-    'brn-radio': Components.BrnRadioAttributes;
-    'brn-row': Components.BrnRowAttributes;
-    'brn-slider': Components.BrnSliderAttributes;
-    'brn-tab': Components.BrnTabAttributes;
-    'brn-tabs': Components.BrnTabsAttributes;
-    'brn-toggle': Components.BrnToggleAttributes;
-  }
 
 
   interface HTMLBrnCheckboxElement extends Components.BrnCheckbox, HTMLStencilElement {}
@@ -184,21 +107,7 @@ declare global {
     prototype: HTMLBrnToggleElement;
     new (): HTMLBrnToggleElement;
   };
-
   interface HTMLElementTagNameMap {
-    'brn-checkbox': HTMLBrnCheckboxElement
-    'brn-collapse': HTMLBrnCollapseElement
-    'brn-column': HTMLBrnColumnElement
-    'brn-dropdown': HTMLBrnDropdownElement
-    'brn-radio': HTMLBrnRadioElement
-    'brn-row': HTMLBrnRowElement
-    'brn-slider': HTMLBrnSliderElement
-    'brn-tab': HTMLBrnTabElement
-    'brn-tabs': HTMLBrnTabsElement
-    'brn-toggle': HTMLBrnToggleElement
-  }
-
-  interface ElementTagNameMap {
     'brn-checkbox': HTMLBrnCheckboxElement;
     'brn-collapse': HTMLBrnCollapseElement;
     'brn-column': HTMLBrnColumnElement;
@@ -210,14 +119,67 @@ declare global {
     'brn-tabs': HTMLBrnTabsElement;
     'brn-toggle': HTMLBrnToggleElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface BrnCheckbox extends JSXBase.HTMLAttributes<HTMLBrnCheckboxElement> {
+    'checked'?: boolean;
+    'onChanged'?: (event: CustomEvent<boolean>) => void;
+    'type'?: keyof StyleType;
+  }
+  interface BrnCollapse extends JSXBase.HTMLAttributes<HTMLBrnCollapseElement> {
+    'active'?: boolean;
+  }
+  interface BrnColumn extends JSXBase.HTMLAttributes<HTMLBrnColumnElement> {
+    'columns'?: number;
+    'total'?: number;
+  }
+  interface BrnDropdown extends JSXBase.HTMLAttributes<HTMLBrnDropdownElement> {
+    'active'?: boolean;
+    'closeable'?: boolean;
+  }
+  interface BrnRadio extends JSXBase.HTMLAttributes<HTMLBrnRadioElement> {
+    'checked'?: boolean;
+    'name'?: string;
+    'onChanged'?: (event: CustomEvent<boolean>) => void;
+    'type'?: keyof StyleType;
+  }
+  interface BrnRow extends JSXBase.HTMLAttributes<HTMLBrnRowElement> {}
+  interface BrnSlider extends JSXBase.HTMLAttributes<HTMLBrnSliderElement> {}
+  interface BrnTab extends JSXBase.HTMLAttributes<HTMLBrnTabElement> {
+    'active'?: boolean;
+    'name'?: string;
+    'onTabChanged'?: (event: CustomEvent<TabType>) => void;
+    'onTabLoaded'?: (event: CustomEvent<TabType>) => void;
+  }
+  interface BrnTabs extends JSXBase.HTMLAttributes<HTMLBrnTabsElement> {}
+  interface BrnToggle extends JSXBase.HTMLAttributes<HTMLBrnToggleElement> {
+    'checked'?: boolean;
+    'onChanged'?: (event: CustomEvent<boolean>) => void;
+    'type'?: keyof StyleType;
+  }
+
+  interface IntrinsicElements {
+    'brn-checkbox': BrnCheckbox;
+    'brn-collapse': BrnCollapse;
+    'brn-column': BrnColumn;
+    'brn-dropdown': BrnDropdown;
+    'brn-radio': BrnRadio;
+    'brn-row': BrnRow;
+    'brn-slider': BrnSlider;
+    'brn-tab': BrnTab;
+    'brn-tabs': BrnTabs;
+    'brn-toggle': BrnToggle;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+

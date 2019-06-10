@@ -7,7 +7,8 @@ import {
   EventEmitter,
   Element,
   ComponentWillLoad,
-  ComponentDidLoad
+  ComponentDidLoad,
+  h
 } from "@stencil/core";
 import { TabType } from "../../objects/types";
 import { AppHelper } from "../../helpers/app.helper";
